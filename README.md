@@ -6,8 +6,6 @@ output: html_document
 ---
 
 
-Course project for the Coursera course [Getting and Cleaning Data](https://www.coursera.org/course/getdata)
-
 ## Installation
 * Download the script `run_analysis.R` to the working directory 
 * Download the raw data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip to the working directory

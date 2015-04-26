@@ -80,16 +80,18 @@ tidy_data   = dcast(melt_data, Subject + Activity ~ variable, mean)
 ## Better column names
 
 col_names <- colnames(tidy_data)
-col_names <- gsub("-mean()","Mean",col_names)
-col_names <- gsub("-std()","Std",col_names)
+col_names <- gsub("-mean","Mean",col_names)
+col_names <- gsub("-std","Std",col_names)
 col_names <- gsub("BodyBody","Body",col_names)
-    
-    
+col_names <-  gsub("\\(\\)","",col_names)   
+col_names <- sub("^t","MeanT",col_names)
+col_names <- sub("^f","MeanF",col_names)
+
 colnames(tidy_data) <- col_names
     
 
 ## write the output  file
-write.table(tidy_data, file = "./tidydata.txt")
+write.table(tidy_data, file = "./tidydata.txt",sep="\t")
 
 
 
